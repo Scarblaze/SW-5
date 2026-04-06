@@ -1,0 +1,12 @@
+INPUT: calculate 3 + 4
+TOOL: calculator
+OUTPUT: Calculated Result: 7
+--------------------------------------------------
+INPUT: summarize the kingdom of baghdad and the battle of the two saints
+TOOL: summarizer
+OUTPUT: Summary: the kingdom of baghdad and the battle of the two...
+--------------------------------------------------
+INPUT: weather mumbai
+TOOL: weather
+OUTPUT: Weather in Mumbai: 28°C, Humid
+--------------------------------------------------
