@@ -1,20 +1,31 @@
 class Executor:
     def execute(self, plan, numbers):
-        intermediate_outputs = {}
+        outputs = {}
         result = None
 
         for step in plan:
             if step == "extract_numbers":
-                intermediate_outputs["numbers"] = numbers
+                outputs["numbers"] = numbers
 
             elif step == "compute_average":
-                avg = sum(numbers) / len(numbers)
-                intermediate_outputs["average"] = avg
-                result = avg
+                result = sum(numbers) / len(numbers)
+                outputs["average"] = result
+
+            elif step == "compute_sum":
+                result = sum(numbers)
+                outputs["sum"] = result
+
+            elif step == "compute_max":
+                result = max(numbers)
+                outputs["maximum"] = result
+
+            elif step == "compute_min":
+                result = min(numbers)
+                outputs["minimum"] = result
 
             elif step == "generate_summary":
-                summary = f"The average of the given numbers is {result}."
-                intermediate_outputs["summary"] = summary
+                summary = f"The computed result is {result}."
+                outputs["summary"] = summary
                 result = summary
 
-        return intermediate_outputs, result
+        return outputs, result
